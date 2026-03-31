@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026년 3월 매장 품질 코칭체크리스트</title>
+<style>
+    body { font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; background-color: #f4f6f8; margin: 0; padding: 15px; padding-bottom: 90px; }
+    .container { max-width: 600px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    h1 { font-size: 22px; text-align: center; color: #222; margin-bottom: 25px; word-break: keep-all; }
+    .section-title { font-size: 16px; font-weight: bold; color: #fff; background-color: #e6007e; padding: 10px 15px; border-radius: 8px; margin-top: 30px; margin-bottom: 10px; display: flex; align-items: center; }
+    .item { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid #eee; padding: 15px 0; gap: 10px;}
+    .item:last-child { border-bottom: none; }
+    .desc-wrapper { flex: 1; display: flex; flex-direction: column; gap: 6px;}
+    .desc { font-size: 14px; color: #333; line-height: 1.4; word-break: keep-all; }
+    .desc strong { display: block; font-size: 15px; color: #111; margin-bottom: 4px; }
+    .score { color: #e6007e; font-size: 14px; font-weight: bold; margin-left: 4px; }
+    
+    /* 뱃지 디자인 */
+    .new-badge { display: inline-block; color: #0056b3; font-size: 12px; font-weight: bold; background-color: #e6f2ff; padding: 2px 6px; border-radius: 4px; border: 1px solid #cce0ff; margin-left: 6px; vertical-align: middle; }
+    .focus-badge { display: inline-block; color: #d92550; font-size: 13px; font-weight: bold; background-color: #ffe6eb; padding: 3px 8px; border-radius: 6px; border: 1px solid #ffb3c6; margin-left: 10px; }
+    
+    .detail-text { font-size: 12.5px; color: #0056b3; background-color: #f0f8ff; padding: 8px; border-radius: 6px; border-left: 3px solid #0056b3; line-height: 1.5; word-break: keep-all; margin-top: 4px;}
+    .ox-group { display: flex; gap: 8px; flex-shrink: 0; margin-top: 2px;}
+    .ox-btn { width: 36px; height: 36px; border: 1px solid #ccc; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #888; font-size: 16px; background-color: #fafafa; cursor: pointer; transition: all 0.2s; user-select: none; }
+    
+    /* 선택 시 디자인 변경 */
+    .btn-o.selected { background-color: #0056b3; color: #fff; border-color: #0056b3; box-shadow: 0 2px 5px rgba(0,86,179,0.3); }
+    .btn-x.selected { background-color: #e6007e; color: #fff; border-color: #e6007e; box-shadow: 0 2px 5px rgba(230,0,126,0.3); }
+
+    /* 하단 고정 점수판 */
+    .score-board { position: fixed; bottom: 0; left: 0; width: 100%; background-color: #222; color: #fff; text-align: center; padding: 15px 0; font-size: 17px; font-weight: bold; box-shadow: 0 -4px 10px rgba(0,0,0,0.15); z-index: 1000; display: flex; justify-content: center; align-items: center; gap: 15px;}
+    .score-board span { color: #ffcc00; font-size: 22px; margin-left: 4px; margin-right: 4px; }
+    
+    /* 초기화 버튼 */
+    .reset-btn { background-color: #555; color: #fff; border: 1px solid #777; padding: 6px 12px; border-radius: 6px; font-size: 14px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+    .reset-btn:hover { background-color: #777; }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📝 매장 품질 코칭체크리스트 (26년 3월)</h1>
+
+    <!-- 1. 기본기 -->
+    <div class="section-title">■ 기본기 (인사, 용모/복장, 상담태도)</div>
+    <div class="item" data-score="4">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>1. 맞이인사 (멘트) <span class="score">[4점]</span></strong>고객 입점 시 고객과 눈을 맞추며 활기찬 목소리로 인사 하는가?</div>
+            <div class="detail-text">💡 "환영합니다 고객님!" 인사멘트 / 하던 업무 멈추고 활기찬 목소리로 맞이</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="4">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>2. 맞이인사 (기립) <span class="score">[4점]</span></strong>고객 입점 시 기립하여 맞이 인사 하였는가?</div>
+            <div class="detail-text">💡 매장 내 1명 이상 일어서서 맞이 (모두 상담 중일 땐 대표 1인이 목례)</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="4">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>3. 배웅인사 (멘트) <span class="score">[4점]</span></strong>고객 퇴점 시 고객과 눈을 맞추며 배웅 인사하는가?</div>
+            <div class="detail-text">💡 고객과 눈을 맞추며 상황에 맞는 정중한 멘트로 배웅</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="4">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>4. 배웅인사 (기립) <span class="score">[4점]</span></strong>고객 퇴점 시 기립하여 배웅 인사 하였는가?</div>
+            <div class="detail-text">💡 상담 후 반드시 일어서서 인사 / 고객이 매장을 떠난 후 자리에 앉음</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="4">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>5. 용모/복장 (명찰) <span class="score">[4점]</span></strong>가이드를 준수하여 명찰 착용을 하고 있는가?</div>
+            <div class="detail-text">💡 전 직원 상황/업무 관계없이 이름이 명확히 보이는 명찰 반드시 착용</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="3">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>6. 용모/복장 (용모) <span class="score">[3점]</span></strong>용모가 청결하고 단정한가?</div>
+            <div class="detail-text">💡 머리 단정(원색 등 불가) / 문신 노출 불가(토시/테이프 부착) / 얼굴 피어싱 불가</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="4">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>7. 용모/복장 (유니폼) <span class="score">[4점]</span></strong>규정에 맞는 유니폼/복장을 착용하였는가?</div>
+            <div class="detail-text">💡 찢어진 청바지, 트레이닝복 불가 / 맨발이나 양말 노출되는 신발 불가</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="3">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>8. 용모/복장 (흡연/취식) <span class="score">[3점]</span></strong>매장 근처 흡연 및 매장 내부 취식을 하지 않는가?</div>
+            <div class="detail-text">💡 환복/사복 외투 착용 후 흡연 / 매장 내 고객 공간 모든 형태 취식 금지</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="5">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>9. 상담태도 (태도) <span class="score">[5점]</span></strong>지켜야할 상담기본기 태도에 대한 내용을 알고 있는가?</div>
+            <div class="detail-text">💡 <b>※ 8가지 중 3가지 이상 말하면 정상</b><br>1)고객 눈 맞춤 2)부드러운 미소 3)경청 4)존댓말 5)긍정적 표현 6)친절한 말투 7)직원 간 차분한 대화 8)상냥한 태도</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+
+    <!-- 2. 매장 환경 (집중코칭) -->
+    <div class="section-title">■ 매장 환경 <span class="focus-badge">⭐ 집중코칭</span></div>
+    <div class="item" data-score="7">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>10. 청소/정리정돈 (외부) <span class="score">[7점]</span></strong>항상 청결하고 정리정돈 된 상태를 유지하고 있는가?</div>
+            <div class="detail-text">💡 매장 앞 휴지통, 어닝, 유리창, 거미줄 등 쓰레기 없이 깨끗하게 관리</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="7">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>11. 청소/정리정돈 (내부) <span class="score">[7점]</span></strong>항상 청결하고 정리정돈 된 상태를 유지하고 있는가?</div>
+            <div class="detail-text">💡 미사용 집기/박스 창고 보관 / CS직원 휴지통 고객 시야에 보이지 않게 비치</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="2">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>12. 사제집기 금지 <span class="score">[2점]</span></strong>유플러스 집기가 아닌 별도 구매한 사제 집기를 사용하고 있지 않은가?</div>
+            <div class="detail-text">💡 제휴사 집기 비치 불가 / 규격 외 냉난방기 사용 불가 / 사제 가구 불가</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="4">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>13. 연출가이드 준수 (외부) <span class="score">[4점]</span></strong>외부 매장 연출 가이드를 준수하여 관리하고 있는가?</div>
+            <div class="detail-text">💡 외부 윈도우 가리는 대형 현수막/LED 금지 / 바닥/외벽 자체 제작물 부착 불가</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="4">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>14. 연출가이드 준수 (내부) <span class="score">[4점]</span></strong>내부 매장 연출 가이드를 준수하여 관리하고 있는가?</div>
+            <div class="detail-text">💡 폐기 포스터 즉시 철거 / TV 매장 연출 가이드 준수 / 테이프 부착 불가</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="2">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>15. 매장연출 (행사/사은품) <span class="score">[2점]</span></strong>가이드에 맞게 행사/사은품을 연출하는가?</div>
+            <div class="detail-text">💡 외부 지정집기 1개만 사용 / 내부 행사 연출 불가(사은품은 수납장 보관)</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="5">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>16. 모바일체험존 (시연환경) <span class="score">[5점]</span></strong>모바일 디바이스 시연 가능하도록 준비 되어 있는가?</div>
+            <div class="detail-text">💡 전원ON/충전 상태 필수 / 도난방지선 연결 / 실물과 목업 일치</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="5">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>17. 홈체험존 (시연환경) <span class="score">[5점]</span></strong>홈 상품 시연 가능하도록 준비 되어 있는가?</div>
+            <div class="detail-text">💡 TV 전원 ON / IPTV 로그인 완료 / 맘카 전원 및 페어링 확인</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="4">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>18. 개인정보 <span class="score">[4점]</span></strong>개인정보 관리가 잘 되고 있는가?</div>
+            <div class="detail-text">💡 고유 식별 정보(신분증, 카드 등) 방치 금지 / 이면지 및 메모 즉시 파기</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+
+    <!-- 3. 고객경험혁신 -->
+    <div class="section-title">■ 고객경험혁신 (구매상담, 만족지표)</div>
+    <div class="item" data-score="3">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>19. 구매상담 (모바일_탐색) <span class="new-badge">⭐ 신설항목</span> <span class="score">[3점]</span></strong>탐색 단계에서 파악해야 할 필수 항목 숙지여부</div>
+            <div class="detail-text">💡 [질문] "구매 상담 전 탐색단계에서 확인해야 하는 핵심 정보는?"<br>→ <b>※ 3가지 항목 중 2가지 이상 확인 시 정상</b><br>현재 단말기 / 통신사 / 사용패턴(요금제, 약정, 할인 등) 파악</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="9">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>20. 구매상담 (모바일_제안) <span class="new-badge">⭐ 신설항목</span> <span class="score">[9점]</span></strong>신상품/신모델 출시에 맞춰 R/P or 숙지 여부</div>
+            <div class="detail-text">
+                💡 <b>[A단계] 필수 3가지 모두 확인</b> (단말기 특장점 / 요금제 혜택 / 결합&제휴할인)<br>
+                ※ A단계 모두 답변해야 B단계 점수 부여 가능<br><br>
+                💡 <b>[B단계] 세부 제안 시연 (각 3점, 총 9점)</b><br>
+                - <b>단말기(S26) 3점</b>: (예) "어두운 동굴을 벗어나지 않고도 S26 Ultra의 선명한 화질을 볼 수 있어요." (프리뷰어시 디스플레이 시연 등)<br>
+                - <b>요금제 혜택 3점</b>: (115 요금제 기준 다음 혜택 모두 설명)<br>
+                  &nbsp;&nbsp;① 프리미엄 혜택(OTT/디바이스/구독/자사서비스팩)<br>
+                  &nbsp;&nbsp;② 기본 혜택(통화/문자/데이터 무제한, 스마트기기 2대 할인)<br>
+                  &nbsp;&nbsp;③ 미디어 서비스 혜택(아이들나라, U+모바일tv 등)<br>
+                  &nbsp;&nbsp;④ 멤버십 혜택(CGV, 네이버멤버십, 편의점, 베이커리 등)<br>
+                - <b>결합&제휴할인 3점</b>: (예) "신한스마트플랜Plus 제휴카드 발급 시 <b>30만원 이상 2.3만원, 70만원 이상 2.5만원 할인</b>돼요." 등 금액대별 혜택 및 결합 제안
+            </div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="3">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>21. 구매상담 (모바일_마무리) <span class="new-badge">⭐ 신설항목</span> <span class="score">[3점]</span></strong>상담 완료 이후 필수 안내사항 숙지여부</div>
+            <div class="detail-text">💡 <b>※ 2가지 모두 답변해야 양호</b><br>상담 완료 후 고객에게 <b>'제안서'</b> 와 <b>'명함'</b> 제공</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="5">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>22. 구매상담 (홈) <span class="new-badge">⭐ 신설항목</span> <span class="score">[5점]</span></strong>홈상품 Sales point 숙지 여부</div>
+            <div class="detail-text">
+                💡 <b>※ 홈상품 4가지 Sales point 숙지 (타겟에 맞는 멘트 제안)</b><br>
+                ① <b>맘카</b> (어린이/반려동물/1인가구): "아이가 집에 잘 있는지 실시간으로 확인할 수 있어서 마음이 편해요." 등<br>
+                ② <b>도어벨</b> (초등자녀/시니어): "초등 자녀가 학교를 마치고 잘 귀가했는지 확인할 수 있어요." 등<br>
+                ③ <b>TV프리</b> (다인가구/주부/1인가구): "거실 눈치 볼 필요 없이 안방에서 보고 싶은 채널을 마음 편히 보세요." 등<br>
+                ④ <b>프리미엄 환승구독2</b> (주부/Heavy User/시니어): "인기 드라마 보려면 OTT 여러개 이용해야 하는데 환승구독 하나면 모두 이용 가능해요." 등
+            </div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="3">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>23. 만족지표 (t-NPS 관리) <span class="new-badge">⭐ 신설항목</span> <span class="score">[3점]</span></strong>t-NPS 관리 현황 파악</div>
+            <div class="detail-text">💡 영업담당 연구소 <b>t-NPS 제작물 및 배포 자료</b> 비치 여부 점검</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="2">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>24. 만족지표 (문의/불만 관리) <span class="new-badge">⭐ 신설항목</span> <span class="score">[2점]</span></strong>UCRM을 활용하여 고객 관리를 하고 있는가?</div>
+            <div class="detail-text">💡 UCRM <b>D+1 대상고객 완료 여부 확인</b> 및 당일 할 일 점검</div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+
+    <!-- 4. 영업역량관리 시연 -->
+    <div class="section-title">■ 영업역량관리 시연</div>
+    <div class="item" data-score="1">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>25. 스마트홈 (시연) <span class="score">[1점]</span></strong>스마트홈, 맘카 고객 경험 가이드 시연 가능 여부</div>
+            <div class="detail-text">
+                💡 <b>※ 2가지 항목 중 1가지 이상 시연 진행 (반드시 사생활 보호 모드 OFF 후 시연 시작)</b><br>
+                ① <b>Easy2+ / 수면, 감지:</b> 카메라 버튼 선택 → 사생활 보호 모드 OFF → 사생활 보호 모드 ON 시연<br>
+                ② <b>감지 녹화/모드 시연:</b><br>
+                - Easy2+: 카메라 버튼 → 감지 설정 버튼 → 감지 모드 선택 후 활성화<br>
+                - 수면/감지: 카메라 버튼 → 설정 버튼 → 감지 녹화 활성화<br>
+                - 맘카: 카메라 버튼 → 설정 버튼 → 감지 녹화 설정 버튼 → 감지 녹화 활성화
+            </div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="1">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>26. 익시오 (시연) <span class="new-badge">⭐ 신설항목</span> <span class="score">[1점]</span></strong>익시오 체험용 APP 주요 기능 시연 및 설명 가능 여부</div>
+            <div class="detail-text">
+                💡 <b>※ 4가지 주요 기능 중 1가지 이상 앱으로 직접 시연하며 설명</b><br>
+                ① 실시간 보이스피싱 탐지 / ② 녹음, 요약 및 AI제안 / ③ 보이는 전화 / ④ AI 전화 대신 받기<br>
+                <i>(체험용 APP 시연 불가 시: 익시오 숏폼 체험 영상 URL/QR코드 또는 프로모션 존 QR코드로 시연)</i>
+            </div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="1">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>27. U+one (시연) <span class="new-badge">⭐ 신설항목</span> <span class="score">[1점]</span></strong>U+one 고객 경험 가이드 시연 및 설명 가능 여부</div>
+            <div class="detail-text">
+                💡 <b>※ 2가지 항목 중 1가지 이상 직접 시연 진행</b><br>
+                ① <b>안전한 보안 생활:</b> U+one 실행 > 간편 로그인 > [메뉴] > [고객지원] > [나의 보안 진단] > [나의 보안 지키기] > 하단 [예방! U+보안 서비스] 5가지 안내<br>
+                ② <b>외국인 고객 이용 방법:</b> U+one 실행 > 간편 로그인 > [메뉴] > [Foreigner] > [예/Ok] > 메뉴 옆 [지구본 모양] 언어 변환 > [언어] > [확인] > 외국인 전용 메인 화면 안내
+            </div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="1">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>28. 스마트CS (AX시스템) <span class="new-badge">⭐ 신설항목</span> <span class="score">[1점]</span></strong>스마트CS를 잘 활용하고 있는가?</div>
+            <div class="detail-text">
+                💡 <b>※ 2가지 모두 숙지해야 양호</b><br>
+                ① 스마트CS 패드가 매장에 설치되어 있고 실제 로그인이 가능한가?<br>
+                ② 스마트CS를 통해 처리 가능한 CS 항목을 숙지하고 있는가? (요금안내/변경, 납부/청구 등 9개 항목 중 <b>5가지 이상</b> 말하면 정상)
+            </div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+    <div class="item" data-score="1">
+        <div class="desc-wrapper">
+            <div class="desc"><strong>29. AI헬프데스크 (AX시스템) <span class="new-badge">⭐ 신설항목</span> <span class="score">[1점]</span></strong>AI헬프데스크 사용 방법을 잘 알고 있는가?</div>
+            <div class="detail-text">
+                💡 <b>※ 2가지 모두 숙지해야 양호</b><br>
+                ① AI헬프데스크 접속 방법을 알고 실행할 수 있는가? (유큐브 퀵메뉴 또는 엣지 창 주소 입력 등)<br>
+                ② 질문을 입력하고, 답변 하단 <b>'출처' 버튼을 눌러 상담가이드로 이동</b>하여 상세 내용을 확인하는 방법을 시연할 수 있는가?
+            </div>
+        </div>
+        <div class="ox-group"><div class="ox-btn btn-o">O</div><div class="ox-btn btn-x">X</div></div>
+    </div>
+</div>
+
+<!-- 실시간 총점 표시판 & 초기화 버튼 -->
+<div class="score-board">
+    <div>✅ 현재 총점: <span id="total-score">0</span> / 105 점</div>
+    <button class="reset-btn" id="reset-btn">🔄 초기화</button>
+</div>
+
+<!-- O/X 클릭 및 점수 합산 스크립트 -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const items = document.querySelectorAll('.item');
+        const totalScoreDisplay = document.getElementById('total-score');
+        const resetBtn = document.getElementById('reset-btn');
+
+        // O/X 버튼 기능
+        items.forEach(item => {
+            const btnO = item.querySelector('.btn-o');
+            const btnX = item.querySelector('.btn-x');
+
+            btnO.addEventListener('click', () => {
+                if (!btnO.classList.contains('selected')) {
+                    btnO.classList.add('selected');
+                    btnX.classList.remove('selected');
+                    calculateTotal();
+                }
+            });
+
+            btnX.addEventListener('click', () => {
+                if (!btnX.classList.contains('selected')) {
+                    btnX.classList.add('selected');
+                    btnO.classList.remove('selected');
+                    calculateTotal();
+                }
+            });
+        });
+
+        // 총점 계산 함수
+        function calculateTotal() {
+            let sum = 0;
+            const selectedOButtons = document.querySelectorAll('.btn-o.selected');
+            
+            selectedOButtons.forEach(btn => {
+                const parentItem = btn.closest('.item');
+                const score = parseInt(parentItem.getAttribute('data-score'), 10);
+                if (!isNaN(score)) {
+                    sum += score;
+                }
+            });
+
+            totalScoreDisplay.innerText = sum;
+        }
+
+        // 초기화 버튼 기능
+        resetBtn.addEventListener('click', () => {
+            if(confirm("체크한 내용을 모두 초기화 하시겠습니까?")) {
+                document.querySelectorAll('.ox-btn.selected').forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+                calculateTotal();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
